@@ -37,55 +37,34 @@ The original project focused on three goals:
 
 ## 3. Methods
 
-The experiment combined four dimensionality-reduction techniques with
-two clustering algorithms.
+The experiment combined four dimensionality-reduction techniques with two clustering algorithms.
 
-### Dimensionality reduction
+### 3.1 Dimensionality Reduction
 
-  -----------------------------------------------------------------------
-  Technique                           Description
-  ----------------------------------- -----------------------------------
-  PCA                                 Principal Component Analysis; a
-                                      linear dimensionality-reduction
-                                      technique.
+| Technique | Description |
+|---|---|
+| **PCA** | Principal Component Analysis; a linear dimensionality-reduction technique. |
+| **LDA** | Linear Discriminant Analysis; a supervised technique that uses class labels. |
+| **UMAP** | Uniform Manifold Approximation and Projection; a nonlinear dimensionality-reduction technique. |
+| **t-SNE** | t-distributed Stochastic Neighbor Embedding; a nonlinear technique commonly used to visualize high-dimensional data. |
 
-  LDA                                 Linear Discriminant Analysis; a
-                                      supervised technique that uses
-                                      class labels.
+### 3.2 Clustering
 
-  UMAP                                Uniform Manifold Approximation and
-                                      Projection; a nonlinear
-                                      dimensionality-reduction technique.
+| Algorithm | Description |
+|---|---|
+| **K-Means** | Groups feature vectors into a predefined number of clusters. |
+| **Spectral Clustering** | Uses relationships between data points to identify clusters. |
 
-  t-SNE                               t-distributed Stochastic Neighbor
-                                      Embedding; a nonlinear technique
-                                      commonly used to visualize
-                                      high-dimensional data.
-  -----------------------------------------------------------------------
+### 3.3 Experimental Combinations
 
-### Clustering
+Each dimensionality-reduction technique was combined with both clustering algorithms, resulting in eight combinations:
 
-  -----------------------------------------------------------------------
-  Algorithm                           Description
-  ----------------------------------- -----------------------------------
-  K-Means                             Groups feature vectors into a
-                                      predefined number of clusters.
-
-  Spectral Clustering                 Uses relationships between data
-                                      points to identify clusters.
-  -----------------------------------------------------------------------
-
-### Experimental combinations
-
-Each dimensionality-reduction technique was combined with both
-clustering algorithms, resulting in eight combinations:
-
-  Dimensionality reduction   Clustering algorithms
-  -------------------------- ------------------------------
-  PCA                        K-Means, Spectral Clustering
-  LDA                        K-Means, Spectral Clustering
-  UMAP                       K-Means, Spectral Clustering
-  t-SNE                      K-Means, Spectral Clustering
+| Dimensionality-reduction technique | Clustering algorithms |
+|---|---|
+| PCA | K-Means, Spectral Clustering |
+| LDA | K-Means, Spectral Clustering |
+| UMAP | K-Means, Spectral Clustering |
+| t-SNE | K-Means, Spectral Clustering |
 
 ## 4. Experimental Workflow
 
@@ -110,15 +89,14 @@ the feature-space structure visually inspectable.
 
 The following values are transcribed from the original project results
 summary.
-### 5.1 Clustering on the original feature vectors
+### 5.1 Clustering on the Original Feature Vectors
 
-The results summary reports the following values for clustering without
-first applying dimensionality reduction:
+The results summary reports the following values for clustering without first applying dimensionality reduction:
 
-  Clustering algorithm     Reported value
-  ---------------------- ----------------
-  K-Means                           0.2648
-  Spectral Clustering               0.2675
+| Clustering algorithm | Reported value |
+|---|---:|
+| K-Means | 0.2648 |
+| Spectral Clustering | 0.2675 |
 
 ### 5.2 Dimensionality-Reduction Visualizations
 
@@ -166,16 +144,14 @@ feature representation.
 The plots allow the cluster assignments to be inspected in the reduced
 feature spaces.
 
-### 5.4 Average silhouette scores
+### 5.4 Average Silhouette Scores
 
-The original results summary reports the following average silhouette
-scores for the combinations of dimensionality-reduction and clustering
-methods:
+The original results summary reports the following average silhouette scores for the combinations of dimensionality-reduction and clustering methods:
 
-  Clustering algorithm        PCA      LDA     UMAP    t-SNE
-  ---------------------- -------- -------- -------- --------
-  K-Means                  0.2647   0.2597   0.2642   0.2502
-  Spectral Clustering      0.2647   0.2593   0.2644   0.0060
+| Clustering algorithm | PCA | LDA | UMAP | t-SNE |
+|---|---:|---:|---:|---:|
+| K-Means | 0.2647 | 0.2597 | 0.2642 | 0.2502 |
+| Spectral Clustering | 0.2647 | 0.2593 | 0.2644 | 0.0060 |
 
 **Observations from the reported values:**
 
@@ -191,15 +167,15 @@ methods:
     not establish that the same ranking would hold for other datasets,
     feature extractors or parameter settings.
 
-### 5.5 Processing time
+### 5.5 Processing Time
 
 The original summary reports the following processing times in seconds:
 
-  Clustering method       PCA (s)   LDA (s)   UMAP (s)   t-SNE (s)
-  --------------------- --------- --------- ----------- ----------
-  No clustering              0.03      0.66       10.07       6.84    
-  K-Means                    0.72      0.52        9.73       5.08       
-  Spectral Clustering        0.54      0.98       10.49   1,205.47      
+| Clustering method | PCA (s) | LDA (s) | UMAP (s) | t-SNE (s) |
+|---|---:|---:|---:|---:|
+| No clustering | 0.03 | 0.66 | 10.07 | 6.84 |
+| K-Means | 0.72 | 0.52 | 9.73 | 5.08 |
+| Spectral Clustering | 0.54 | 0.98 | 10.9 | 1,205.47 |      
 
 **Observations from the reported timings:**
 
@@ -229,18 +205,22 @@ libraries:
 
 ## 7. Repository Structure
 
-``` text
+```text
 latent-space-explorer/
 │
 ├── original_work/
 │   ├── Clustering_DR_Library.py
 │   ├── Clustering_DR_Runner.py
+│   └── Dissanayake_Ishara.ipynb
 │
 ├── data/
 │   └── README.md
 │
 ├── results/
 │   ├── figures/
+│   │   ├── overview.png
+│   │   ├── dimensionality_reduction/
+│   │   └── clustering_combinations/
 │   └── Results-summery.pdf
 │
 ├── docs/
@@ -285,7 +265,7 @@ implementation, examine its limitations and reflect on how my
 understanding of machine-learning workflows and Python development has
 evolved.
 
-------------------------------------------------------------------------
+---
 
 **Academic project:** MSc Artificial Intelligence for Industrial
 Applications\

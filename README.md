@@ -256,13 +256,10 @@ parameters and execution environment. In particular:
 ## 9. Revisiting the Project
 
 The original implementation is preserved as the record of the academic
-work completed during the first semester of my MSc. Any later
-corrections, clarifications or documentation improvements will be kept
-separate from that original version.
-
+work completed during the first semester of my MSc. 
 Revisiting the experiment provides an opportunity to review the
-implementation, examine its limitations and reflect on how my
-understanding of machine-learning workflows and Python development has
+implementation, and `docs/development_notes.md`gives a review on 
+its limitations and reflect on how my understanding of machine-learning workflows and Python development has
 evolved.
 
 ---

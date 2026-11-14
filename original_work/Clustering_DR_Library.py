@@ -45,7 +45,6 @@ for i in feature_data:
     data.append(i[1])
 feature_array = np.array(data)  # Create an array of feature data
 
-
 ## CLUSTERING
 # KMeans Clustering
 def KMEANS_CL(k_clusters, k_cluster_input):
@@ -70,8 +69,6 @@ def SPECTRAL_CL(spectral_n_clusters, spectral_cluster_input):
     print("The average silhouette_score is :", silhouette_avg )
 
     return labels
-
-
 
 ## DIMENSIONALITY REDUCTION
 
@@ -162,9 +159,7 @@ def plot_PCA_kmeans(pca_components_kmeans, kmeans_cluster_labels_after_PCA, kmea
     plt.ylabel("PC2")
     plt.show()
 
-
 #2. LDA Dimensionality Reduction with KMeans Clustering
-
 def LDA_kmeans(n_lda, lda_data, lda_classes,k_clusters):  # (LDA components, no.of clusters, lda input features, lda classes, kmeans input data)
     start_time = time.time()
     lda_out_for_kmeans = LDA_DR(n_lda, lda_data, lda_classes)
@@ -203,7 +198,6 @@ def plot_tSNE_kmeans(x1_tsne_kmeans, x2_tsne_kmeans, kmeans_cluster_labels_after
     plt.ylabel("tSNE2")
     plt.show()
 
-
 #4. UMAP Dimensionality Reduction with KMeans Clustering
 def UMAP_kmeans(n_umap, umap_input,
                 k_clusters):  # (no of UMAP embeddings, no.of clusters, TSNE input data, kmeans input data)
@@ -224,7 +218,6 @@ def plot_UMAP_kmeans(x1_umap_kmeans, x2_umap_kmeans, kmeans_cluster_labels_after
     plt.show()
 
 #5. PCA Dimensionality Reduction with Spectral Clustering
-
 def PCA_Spectral(n_pca, spectral_n_clusters,pca_input):  # (PCA components, no.of clusters, PCA input features, kmeans input data)
     start_time = time.time()
     pca_for_spectral = PCA_DR(n_pca, pca_input)
@@ -250,7 +243,6 @@ def LDA_Spectral(n_lda, lda_data, lda_classes,spectral_n_clusters):  # (LDA comp
     elapsed_time = (time.time() - start_time)
     return spectral_for_lda, lda_out_for_spectral[0], elapsed_time
 
-
 #plot the graph for LDA Dimensionality Reduction with Spectral Clustering
 def plot_LDA_Spectral(x1_lda_spectral, x2_lda_spectral, spectral_cluster_labels_after_LDA, used_time):
     plt.scatter(x1_lda_spectral, x2_lda_spectral, c=spectral_cluster_labels_after_LDA, s=60)
@@ -258,7 +250,6 @@ def plot_LDA_Spectral(x1_lda_spectral, x2_lda_spectral, spectral_cluster_labels_
     plt.xlabel("LDA1 ")
     plt.ylabel("LDA2")
     plt.show()
-
 
 #7. Spectral with TSNE
 def tSNE_Spectral(n_tsne, tsne_input,
@@ -269,7 +260,6 @@ def tSNE_Spectral(n_tsne, tsne_input,
     elapsed_time = (time.time() - start_time)
     return spectral_for_tSNE, tSNE_for_spectral[0], elapsed_time
 
-
 # plot the clusters
 def plot_tSNE_Spectral(x1_tsne_spectral, x2_tsne_spectral, spectral_cluster_labels_after_tSNE, used_time):
     plt.scatter(x1_tsne_spectral, x2_tsne_spectral, c=spectral_cluster_labels_after_tSNE, s=20)
@@ -277,7 +267,6 @@ def plot_tSNE_Spectral(x1_tsne_spectral, x2_tsne_spectral, spectral_cluster_labe
     plt.xlabel("tSNE1 ")
     plt.ylabel("tSNE2")
     plt.show()
-
 
 #8. Spectral with UMAP
 def UMAP_Spectral(n_umap, umap_input,
@@ -288,7 +277,6 @@ def UMAP_Spectral(n_umap, umap_input,
     elapsed_time = (time.time() - start_time)
     return spectral_for_UMAP, UMAP_for_spectral[0], elapsed_time
 
-
 # plot the clusters
 def plot_UMAP_Spectral(x1_umap_spectral, x2_umap_spectral, spectral_cluster_labels_after_umap, used_time):
     plt.scatter(x1_umap_spectral, x2_umap_spectral, c=spectral_cluster_labels_after_umap, s=20)
@@ -296,7 +284,6 @@ def plot_UMAP_Spectral(x1_umap_spectral, x2_umap_spectral, spectral_cluster_labe
     plt.xlabel("UMAP1 ")
     plt.ylabel("UMAP2")
     plt.show()
-
 
 ## DIMENSIONALITY REDUCTION AFTER CLUSTERING
 
@@ -317,7 +304,6 @@ def plot_kmeans_PCA(PCA_Components,K_Labels,used_time):
     plt.show()
 
 #2. KMeans Clustering before PCA
-
 def kmeans_LDA(n_lda, k_cluster_input, lda_classes,k_clusters):  # (LDA components, no.of clusters, lda input features, lda classes, kmeans input data)
     start_time = time.time()
     kmeans_for_lda = KMEANS_CL(k_clusters,k_cluster_input )
@@ -343,8 +329,6 @@ def kmeans_tSNE(n_tsne,k_clusters,k_cluster_input):
 
     return tSNE_for_kmeans[0],kmeans_labels, elapsed_time
 
-
-
 #plot the graph for t-SNE
 def plot_kmeans_tSNE(x1_tsne_kmeans, x2_tsne_kmeans,K_Labels,used_time):
     plt.scatter(x1_tsne_kmeans, x2_tsne_kmeans, c=K_Labels, s=20)
@@ -352,7 +336,6 @@ def plot_kmeans_tSNE(x1_tsne_kmeans, x2_tsne_kmeans,K_Labels,used_time):
     plt.xlabel("tSNE1 ")
     plt.ylabel("tSNE2")
     plt.show()
-
 
 #4. KMeans Clustering before UMAP
 def kmeans_UMAP(n_umap,k_clusters,k_cluster_input):  # (no of UMAP embeddings, no.of clusters, TSNE input data, kmeans input data)
@@ -370,7 +353,6 @@ def plot_kmeans_UMAP(x1_umap_kmeans, x2_umap_kmeans, K_Labels,used_time):
     plt.xlabel("UMAP1 ")
     plt.ylabel("UMAP2")
     plt.show()
-
 
 #5. Spectral Clustering before PCA
 def Spectral_PCA(n_pca, spectral_n_clusters,spectral_cluster_input):  # (PCA components, no.of clusters, PCA input features, kmeans input data)
@@ -397,7 +379,6 @@ def Spectral_LDA(n_lda,lda_classes,spectral_n_clusters,spectral_cluster_input): 
     elapsed_time = (time.time() - start_time)
     return lda_out_for_spectral[0],spectral_labels, elapsed_time
 
-
 #plot the graph for LDA Dimensionality Reduction with Spectral Clustering
 def plot_Spectral_LDA(x1_lda_spectral, x2_lda_spectral, Spectral_Labels, used_time):
     plt.scatter(x1_lda_spectral, x2_lda_spectral, c=Spectral_Labels, s=60)
@@ -406,7 +387,6 @@ def plot_Spectral_LDA(x1_lda_spectral, x2_lda_spectral, Spectral_Labels, used_ti
     plt.ylabel("LDA2")
     plt.show()
 
-
 #7. Spectral Clustering before t-SNE
 def Spectral_tSNE(n_tsne,spectral_n_clusters,spectral_cluster_input):  # (TSNE embeddings, no.of clusters, TSNE input data, kmeans input data)
     start_time = time.time()
@@ -414,7 +394,6 @@ def Spectral_tSNE(n_tsne,spectral_n_clusters,spectral_cluster_input):  # (TSNE e
     tSNE_for_spectral = TSNE_DR(n_tsne, spectral_cluster_input)
     elapsed_time = (time.time() - start_time)
     return tSNE_for_spectral[0],spectral_labels, elapsed_time
-
 
 # plot the clusters
 def plot_Spectral_tSNE(x1_tsne_spectral, x2_tsne_spectral, Spectral_Labels, used_time):
@@ -431,7 +410,6 @@ def Spectral_UMAP(n_umap,spectral_n_clusters,spectral_cluster_input):  # (no of 
     UMAP_for_spectral = UMAP_DR(n_umap, spectral_cluster_input)
     elapsed_time = (time.time() - start_time)
     return UMAP_for_spectral[0],spectral_labels,elapsed_time
-
 
 # plot the clusters
 def plot_Spectral_UMAP(x1_umap_spectral, x2_umap_spectral, Spectral_Labels, used_time):

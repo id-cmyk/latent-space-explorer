@@ -32,5 +32,3 @@ The results are explored through visualizations and evaluated using average silh
 The diagram below summarizes the three workflows considered in the project.
 
 ![Latent Space Explorer conceptual overview](../results/figures/overview.png)
-
-> **Note:** The diagram should list UMAP under *Dimensionality Reduction Methods*, not under *Clustering Methods*, to match the methods implemented in this project.

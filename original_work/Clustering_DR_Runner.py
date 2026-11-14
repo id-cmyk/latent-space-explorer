@@ -72,7 +72,6 @@ if get_user_function == "1":
         spectral_cluster_input = feature_array
         SPECTRAL_CL(spectral_n_clusters, spectral_cluster_input)
 
-
 #Perform dimensionality reduction
 elif get_user_function == "2":
     print("You selected Dimensionality Reduction")
@@ -91,6 +90,7 @@ elif get_user_function == "2":
         pca_out_components = PCA_out[1]
         used_time = PCA_out[2]
         plot_PCA(pca_out_components, pca_variance_ratio, used_time)
+        
     # 2.LDA
     elif get_DR_method == "2":
         print("You selected LDA dimensionality reduction technique")
